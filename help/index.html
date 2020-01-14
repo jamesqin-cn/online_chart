@@ -1,0 +1,299 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"> 
+<html lang="zh-cn"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta http-equiv="Content-Language" content="zh-cn" /> 
+<meta name="robots" content="all" /> 
+<meta name="Keywords" content="腾讯,搜搜,Tencent Chart Tools" /> 
+<meta name="Description" content="Tencent Chart Tools" /> 
+<meta name="author" content="Tencent" /> 
+<meta name="copyright" content="Tencent" /> 
+<title>Tencent Chart Tools</title> 
+<link rel="sgirtcut icon" href="/images/soso.ico" /> 
+<link href="css/global.css" rel="stylesheet" type="text/css" media="screen" /> 
+<link href="css/second.css" rel="stylesheet" type="text/css" media="screen" /> 
+<link href="css/shCore.css" rel="stylesheet" type="text/css" media="screen" /> 
+<link href="css/shCoreDefault.css" rel="stylesheet" type="text/css" media="screen" /> 
+<script type="text/javascript" src="js/jquery/jquery.1.4.2.min.js" charset="utf-8"></script> 
+<script type="text/javascript" src="js/index.js" charset="utf-8"></script> 
+<script type="text/javascript">
+var i,n=0,flg=0,interval=300,iswaiting=false;
+function clrcmd(){form1.command.value=''; waitr.innerText=' ';iswaiting=false; };
+function closewin(){window.opener = top;window.close();};
+//function chkin(){iswaiting=true;setTimeout("waiting()",interval);}
+
+function chkin(){
+	var txt = $('#command').val();
+	if ((txt == 'cls') || (txt == 'clear')) {
+		$('#msg').html('');
+		return false;
+	}
+
+	iswaiting=true;
+	setTimeout("waiting()",interval);
+	var rnd = Math.ceil(Math.random()*10000);
+	url = '/robot/index.php?module=robot&action=shellfunc&rand=' + rnd + '&command=' + $('#command').val();
+	$.get(url, function(data){
+		newstr = "<p><b>问：" + $('#command').val() + "</b></p><p>答：" + data + "</p>";
+		$('#msg').append(newstr);
+		clrcmd();
+	});
+	return false;
+}
+function waiting(){
+	if (iswaiting==true ) {
+		n++;
+		if(n>6)n=1;
+		waitr.innerText='正在向服务器提交命令，请稍候';
+		for (i=1;i<=n;i++){waitr.innerText+='.';}
+		setTimeout("waiting()",interval);
+	} else {
+		waitr.innerText=' ';
+		clearTimeout();
+	}
+}
+</script>
+
+</head> 
+ 
+<body> 
+<div class="lay_head_wrap" id="divHead"> 
+	<div class="lay_head"> 
+		<h1 class="logo"><strong class="none">Tencent Chart Tools<sup>beta</sup></strong></h1> 
+		<div class="link"> 
+			<span id="ua"></span> 
+		</div> 
+		<div class="nav" id="navDiv"></div> 
+	</div> 
+</div><!--lay_head_wrap--> 
+ 
+<div class="lay_main page_modApp"> 
+	<div class="lay_aside"> 
+		<ul class="menu n_menu" id="ulMenu"> 
+			<li class="curli"><a href="index.html">A.服务概览</a>
+				<ul class="open">
+					<li><a href="#a2-1">1.1 Hello charts!</a></li> 
+					<li><a href="#a2-2">1.2 服务介绍</a></li> 
+					<li><a href="#a2-3">1.3 核心优势</a></li> 
+					<li><a href="#a2-4">1.4 整体架构</a></li> 
+					<li><a href="#a2-5">1.5 线路特性</a></li> 
+				</ul>
+			</li>
+			<li><a href="tutorial.html">B.入门指引</a>
+				<ul>
+					<li><a href="#b2-1">2.1 Hello world!</a></li> 
+					<li><a href="#b2-2">2.2 更高级的封装</a></li> 
+					<li><a href="#b2-3">2.3 使用短网址</a></li> 
+				</ul>
+			</li>
+			<li><a href="manual.html">C.开发手册</a>
+				<ul>
+					<li><a href="#c2-1">3.1 Bar Charts</a></li> 
+					<li><a href="#c2-2">3.2 Line Charts</a></li> 
+					<li><a href="#c2-3">3.3 Pie Charts</a></li> 
+					<li><a href="#c2-4">3.4 Scatter Charts</a></li> 
+				</ul>
+			</li>
+			<li><a href="cases.html">D.经典案例</a>
+				<ul>
+					<li><a href="#d2-1">4.1 搜索平台部：网页搜索QV统计日报</a></li> 
+					<li><a href="#d2-2">4.2 搜索应用部：垂直搜索产品周报</a></li> 
+					<li><a href="#d2-3">4.3 搜索拓展部：校园logo创意大赛日报</a></li> 
+					<li><a href="#d2-4">4.4 搜索拓展部：感恩父母活动日报</a></li> 
+					<li><a href="#d2-5">4.5 搜索拓展部：点亮搜搜新标日报</a></li> 
+					<li><a href="#d2-6">4.6 搜索拓展部：年度贺岁剧小兔快跑日报</a></li> 
+					<li><a href="#d2-7">4.7 研发运营部：客户端(tbh/toolbar)运营日报</a></li> 		
+				</ul>
+			</li>			
+			<li><a href="faq.html">E.常见问题</a>
+				<ul>
+					<li><a href="#e2-1">5.1 如何获取...？</a></li> 
+					<li><a href="#e2-2">5.2 bash脚本也能...？</a></li> 
+					<li><a href="#e2-3">5.3 短url对我有什...？</a></li> 
+					<li><a href="#e2-4">5.4 哪个团队在维...？</a></li> 
+					<li><a href="#e2-5">5.4 和GoogleChart...？</a></li> 					
+				</ul>
+			</li>
+		</ul> 
+	</div> 
+ 
+	<div class="lay_cont">
+		<div class="tit"><h3><a href="#" name="a">Automatic Q&A</a></h3></div> 
+		<div class="txt3"> 
+			<div class="uam"> 
+				<div class="t"><strong><a href="#" name="a1-1">自助在线问答</a></strong></div> 
+				<div class="m"> 
+					<div style="float:left;"><img src="./images/question.jpg"/></div>
+					<div style="float:left;">
+					<p>
+						<strong style="line-height:32px;">我是机器人[卡帕奇]，负责接客，有问题可以先问问我，哥不懂技术，懂一点生活懂一点爱情：</strong><br/>
+						<iframe name="func" frameborder=0 width=0 height=0 style="visibility:hidden"></iframe>
+<div id="msg" style="width:600px"></div>
+<table border=0 cellpadding=0 cellspacing=0>
+<form name=form1 onsubmit="return chkin();">
+<tr valign=bottom>
+	<td>
+	<input type=text name="command" id="command" size=80 style="height:26px;padding:6px;font-size:14px;color:#A94959;" value="给哥讲个笑话？">
+	<input type=submit value="问问卡帕奇" style="width:82px;height:42px;font-size:14px;">
+	</td>
+</tr>
+<tr>
+	<td><div id=waitr>&nbsp;</div></td>
+</tr>
+</form>
+</table>
+					</p></div>
+				</div> 	
+			</div>
+		</div>
+		<div class="tit"><h3><a href="#" name="a">A.服务概览</a></h3></div> 
+		<div class="txt3"> 
+			<div class="uam"> 
+				<div class="t"><strong><a href="#" name="a2-1">1.1 Hello charts!</a></strong></div> 
+				<div class="m"> 
+					<p>
+						<strong style="line-height:32px;">Quick Start：</strong><br/>
+						这是一个简单的例子，我们在页面中嵌入了一张3D饼图：<br/>
+						<img src="http://chart.oa.com/chart.php?cht=p3&chs=400x200&chd=t:20,80,10,23&chl=May|Jun|Jul|Aug|Sep|Oct&chtt=3D%e9%a5%bc%e5%9b%be" /><br />
+						<br />
+						这张图片中的数据，可能从你的业务系统DB中来，也可能从一堆日志文件临时中计算得来，也可能通过各种数据接口获取。不管怎么样，很多时候我们需要把数据通过图形方式展示出来。通过Tencent Chart Tools，我们要达到上述图片展示的效果，只要构造下面这个html片段即可：
+						<pre class="brush: css;">						
+						&lt;html>
+						&nbsp;&nbsp;&nbsp;&nbsp;&lt;head>&lt;/head>
+						&nbsp;&nbsp;&nbsp;&nbsp;&lt;body>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="http://chart.oa.com/chart.php?cht=p3&chs=400x200&chd=t:20,80,10,23&chl=May|Jun|Jul|Aug|Sep|Oct&chtt=3D%e9%a5%bc%e5%9b%be" />
+						&nbsp;&nbsp;&nbsp;&nbsp;&lt;/body>
+						&lt;/html>		
+						</pre>
+					</p> 
+				</div> 						
+				<div class="m"> 
+					<p>
+						而这些html片段，我们用bash脚本，还是php脚本、还是c++程序，都可以轻松生成。以php为例：
+						<pre class="brush: css;">
+						<?php
+						
+						// @desc: pie chart demo
+						// @parameter: none
+						// @return: string, html code with chart url
+						function testPie()
+						{
+							$url = "http://chart.oa.com/chart.php"
+								 . "?cht=p&chs=300x200"
+								 . "&chd=t:20,80,10,23"
+								 . "&chl=hello|world"
+								 . "&chtt=" . urlencode(mb_convert_encoding('中文标题', 'utf8', 'gbk'));
+							echo "<a href=$url><img src=$url></a>\n";
+						}
+						
+						testPie();
+						
+						?>
+						</pre>
+					</p> 
+				</div> 
+				<div class="m"> 
+					<p>	
+					我们传递了描点所需的数据，画图服务就为我们生成了一副图片，很方便，很简单，这就是Tencent Chart Tools.
+					</p> 
+				</div> 
+				<div class="m"> 
+					<p>	
+					<strong style="line-height:32px;">What is tencent chart tools?</strong><br/> 
+					<div style="float:left;"><img src="./images/what.jpg"/></div>
+					<p>
+					Tencent Chart Tools是一款在线动态画图服务，用户通过url调用的方式把绘图描点所需的数据传给画图服务，就可以获取到所需图片。图片可以直接嵌入到html页面中、嵌入到邮件中、拉取到本地。<br>动态画图服务支持多种图片类型，可以跨平台、跨语言调用，使用方便，尤其适用于各种图文并茂的报表系统。
+					</p>
+					</p>
+					<div style="clear:both"> </div>
+				</div> 	
+				<div class="m"> 
+					<p>	
+					<strong style="line-height:32px;">Why we need tencent chart tools?</strong><br/> 
+					<div style="float:right;"><img src="./images/why.jpg"/></div>
+					<p>						
+					google提供了Google Chart Tools，为什么我们需要Tencent Chart Tools？因为：<br>
+					（1）安全性：动态画图服务都需要获取数据才能画图，公司内部有每天有大量的数据报告需要发出，为了避免敏感业务数据外泄，我们需要一款公司自主研发、运行于内部网络的动态画图服务；<br>
+					（2）可靠性：运行于公网的Google chart tools，受公网网络的稳定因素影响，对构造稳定的数据服务极为不便；<br>
+					（3）可用性：公司办公网络已经划分为开发网、办公网，在开发网无法访问公网服务，也无法访问google chart tools；<br>
+					（4）约束性：在邮件中嵌入的图片可以由动态画图服务提供，但有url长度的约束。我们需要辅以短网址的服务，把过长数据用post中转出去。
+					</p> 
+					</p> 
+				</div> 					
+			<div class="t"><strong><a href="#" name="a2-2">1.2 服务介绍</a></strong></div> 
+			<div class="m"> 
+				<p>Tencent Chart Tools提供两大服务，动态画图服务和短网址服务。</p><br>
+				<p>其中，动态画图服务支持如下的图片类型（您在下面所看到的图片均来自Tencent Chart Tools动态画图服务）：</p>
+				<p>(1) 饼图<br>
+				<img src="http://chart.oa.com/chart.php?cht=p&chs=300x200&chd=t:20,80,10,23&chl=hello|world&chtt=%E4%B8%AD%E6%96%87%E6%A0%87%E9%A2%98"></p>
+				<br><br>
+				<p>(2) 3D饼图<br>
+				<img src="http://chart.oa.com/chart.php?cht=p3&chs=400x200&chd=t:20,80,10,23&chl=May|Jun|Jul|Aug|Sep|Oct&chtt=%E8%BF%99%E4%B8%AA%E5%8C%85%E5%90%AB%E7%A9%BA%E6%A0%BC%2B%E7%9A%84%2B%E4%B8%BB%E6%A0%87%E9%A2%98%7C%E8%BF%99%E6%98%AF%E5%89%AF%E6%A0%87%E9%A2%98"></p>
+				<br><br>
+				<p>(3) 直方图<br>
+				<img src="http://chart.oa.com/chart.php?cht=bvs&chs=300x200&chd=t:200,50,60,80,40|50,60,100,40,20&chco=4d89f9,c6d9fd&chdl=sz|%E8%A5%BF%E5%AE%89&chbh=20&chxl=0:|05-04|05-05|05-06|05-07|05-08&chtt=%E4%B8%AD%E6%96%87%E6%A0%87%E9%A2%98">
+				<img src="http://chart.oa.com/chart.php?cht=bvs&chs=300x200&chd=t:200,50,60,80,40&chco=4d89f9&chdl=sz|bj&chbh=20&chxl=0:|05-04|05-05|05-06|05-07|05-08&chtt=%E4%B8%AD%E6%96%87%E6%A0%87%E9%A2%98">
+				<img src="http://chart.oa.com/chart.php?cht=bvg&chs=300x200&chd=t:200,50,60,80,40|50,60,100,40,20&chco=4d89f9,c6d9fd&chdl=sz|%E8%A5%BF%E5%AE%89&chbh=20&chxl=0:|05-04|05-05|05-06|05-07|05-08&chtt=%E4%B8%AD%E6%96%87%E6%A0%87%E9%A2%98"></p>
+				<br><br>
+				<p>(4) 折线图<br>
+				<img src="http://chart.oa.com/chart.php?cht=lc&chs=300x200&chd=t:200,50,60,80,40|50,60,100,40,20&chco=0000ff,ff0000&chdl=sz|bj&chxl=0:|05-04|05-05|05-06|05-07|05-08&chtt=%E4%B8%AD%E6%96%87%E6%A0%87%E9%A2%98"></p>
+				<br><br>
+				<p>(5) 散点图<br>
+				<img src="http://chart.oa.com/chart.php?cht=s&chs=300x200&chd=t:200,50,60,80,40|50,60,100,40,20&chco=ff0000&chdl=sz|bj&chtt=%E4%B8%AD%E6%96%87%E6%A0%87%E9%A2%98"></p>
+				<br><br>
+				<p>Tencent Chart Api的封装是根据Google Chart Api来进行的，目的是为了方便之前使用Google Chart Api的业务能以最小改动完成切换。和一般的高性能网站一样，Tencent Chart Tools的服务具有高可靠性、高扩展性、易维护性等特点。</p>
+			</div>	
+			<div class="t"><strong><a href="#" name="a2-3">1.3 核心优势</a></strong></div> 
+			<div class="m"> 
+				<p style="float:left;"><img src="./images/superiority.jpg"/></p>
+				<p>Tencent Chart Tools的基本目标用户有三种，一种是数据开发者，一种是业务运营工程师，一种是测试开发工程师。使用Tencent Chart Tools能给大家带来的好处有：</p>
+				<p>（1）开发成本更低：tencent chart tools提供了丰富的画图类型和精细的控制选项给开发者使用，不管是在bash脚本中，还是在php脚本中，还是在c++程序中，要开发图文并茂的数据报告、日报邮件，都不再需要调用复杂的图形库，尤其是bash脚本，作为许多非软件开发通道的运营工程师、测试工程师最常接触的一种脚本，要用它来发送图文并茂的邮件是非常困难的，而基于tencent chart tools，可以很轻松实现这个需求，并且开发成本可以降到最低。</p>
+				<p>（2）运维成本更低：我们把画图都基于Tencent Chart Tools来实现后，画图功能就集中在一个统一的服务上，就可以实现对动态画图服务提供专门的运营。在Tencent Chart Tools上，开发人员无需关系硬件维护、服务监控、容灾切换、设备扩容等操作，我们通过专业的运营来保证。</p>
+				<p>（3）更加安全可靠：Tencent Chart Tools是内网服务，比公网服务更加安全。基于短网址服务，将画图点阵的数据隐藏在一个hash key之中，进一步达到了信息隐藏的目的。</p>
+			</div>
+			<div class="t"><strong><a href="#" name="a2-4">1.4 整体架构</a></strong></div> 
+			<div class="m"> 
+				<p>
+				构成Tencent Chart Tools的两大服务，一个chart.oa.com，提供画图服务，一个url.oa.com，提供短网址服务。架构分为接入层、处理层、存储层。如下图所示：
+				</p>
+				<p>
+					<img src="images/architecture.jpg" />
+				</p>
+				<p>(1) 
+				接入层负责接入画图请求，域名都登记在公司oa的dns server上，接入层一旦出现故障，可以在TTL（3600秒）内通过域名变更，将域名切换到备用服务器。接入层安装了nginx，做http 7层反向代理，通过后端健康探测，把请求分发到后端两台process服务器上。对内网的画图服务来讲，只要数据不丢失，这个故障延时可以满足使用的需要了。
+				</p>
+				<p>(2) 逻辑层对接入层传过来的数据进行图片生成、以及短网址的登记及提取转换处理。</p>
+				<p>(3) 存储层有两台DB组成，做了主备同步，DB存储的数据主要为短网址数据。</p>
+			</div>
+			<div class="t"><strong><a href="#" name="a2-5">1.5 线路特性</a></strong></div> 
+			<div class="m"> 
+				<p>
+				chart.oa.com和url.oa.com涉及到的服务器均位于西安IDC。
+				如果要访问这两个服务，请确保正确配置了公司OA提供的DNS Server，并自行考虑跨IDC访问的延时。
+				</p>
+				<p>
+				目前公司提供了4台DNS Server用于内部域名解析：<br>
+				(1) 10.6.18.41<br>
+				(2) 10.6.18.42<br>
+				(3) 192.168.1.26<br>
+				(4) 192.168.1.86
+				</p>
+			</div>
+			</div> 
+		</div> 
+	</div> 
+	<!--lay_cont end-->
+</div> 
+<!--lay_main end--> 
+
+<div class="lay_foot"> 
+	<p class="copyright_en">Copyright &copy; 1998 - 2012 Tencent. All Rights Reserved.</p> 
+	<p class="copyright">腾讯公司 版权所有</p> 
+</div> 
+ 
+<div id="returnTop"></div> 
+<!--scripts--> 
+<script type="text/javascript" src="js/shCore.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/shBrushCss.js" charset="utf-8"></script>
+</body> 
+</html> 

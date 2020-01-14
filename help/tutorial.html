@@ -1,0 +1,430 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"> 
+<html lang="zh-cn"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta http-equiv="Content-Language" content="zh-cn" /> 
+<meta name="robots" content="all" /> 
+<meta name="Keywords" content="腾讯,搜搜,Tencent Chart Tools" /> 
+<meta name="Description" content="Tencent Chart Tools" /> 
+<meta name="author" content="Tencent" /> 
+<meta name="copyright" content="Tencent" /> 
+<title>Tencent Chart Tools</title> 
+<link rel="sgirtcut icon" href="/images/soso.ico" /> 
+<link href="css/global.css" rel="stylesheet" type="text/css" media="screen" /> 
+<link href="css/second.css" rel="stylesheet" type="text/css" media="screen" /> 
+<link href="css/shCore.css" rel="stylesheet" type="text/css" media="screen" /> 
+<link href="css/shCoreDefault.css" rel="stylesheet" type="text/css" media="screen" /> 
+<script type="text/javascript" src="js/jquery/jquery.1.4.2.min.js" charset="utf-8"></script> 
+<script type="text/javascript" src="js/index.js" charset="utf-8"></script> 
+</head> 
+ 
+<body> 
+<div class="lay_head_wrap" id="divHead"> 
+	<div class="lay_head"> 
+		<h1 class="logo"><strong class="none">Tencent Chart Tools<sup>beta</sup></strong></h1> 
+		<div class="link"> 
+			<span id="ua"></span> 
+		</div> 
+		<div class="nav" id="navDiv"></div> 
+	</div> 
+</div><!--lay_head_wrap--> 
+ 
+<div class="lay_main page_modApp"> 
+	<div class="lay_aside"> 
+		<ul class="menu n_menu" id="ulMenu"> 
+			<li><a href="index.html">A.服务概览</a>
+				<ul>
+					<li><a href="#a2-1">1.1 Hello charts!</a></li> 
+					<li><a href="#a2-2">1.2 核心优势</a></li> 
+					<li><a href="#a2-3">1.3 整体架构</a></li> 
+					<li><a href="#a2-4">1.4 线路特性</a></li> 
+					<li><a href="#a2-5">1.5 服务介绍</a></li> 
+				</ul>
+			</li>
+			<li class="curli"><a href="tutorial.html">B.入门指引</a>
+				<ul class="open">
+					<li><a href="#b2-1">2.1 Hello world!</a></li> 
+					<li><a href="#b2-2">2.2 更高级的封装</a></li> 
+					<li><a href="#b2-3">2.3 使用短网址</a></li> 
+				</ul>
+			</li>
+			<li><a href="manual.html">C.开发手册</a>
+				<ul>
+					<li><a href="#c2-1">3.1 Bar Charts</a></li> 
+					<li><a href="#c2-2">3.2 Line Charts</a></li> 
+					<li><a href="#c2-3">3.3 Pie Charts</a></li> 
+					<li><a href="#c2-4">3.4 Scatter Charts</a></li> 
+				</ul>
+			</li>
+			<li><a href="cases.html">D.经典案例</a>
+				<ul>
+					<li><a href="#d2-1">4.1 搜索平台部：网页搜索QV统计日报</a></li> 
+					<li><a href="#d2-2">4.2 搜索应用部：垂直搜索产品周报</a></li> 
+					<li><a href="#d2-3">4.3 搜索拓展部：校园logo创意大赛日报</a></li> 
+					<li><a href="#d2-4">4.4 搜索拓展部：感恩父母活动日报</a></li> 
+					<li><a href="#d2-5">4.5 搜索拓展部：点亮搜搜新标日报</a></li> 
+					<li><a href="#d2-6">4.6 搜索拓展部：年度贺岁剧小兔快跑日报</a></li> 
+					<li><a href="#d2-7">4.7 研发运营部：客户端(tbh/toolbar)运营日报</a></li> 						</ul>
+			</li>			
+			<li><a href="faq.html">E.常见问题</a>
+				<ul>
+					<li><a href="#e2-1">5.1 如何获取Tence...？</a></li> 
+					<li><a href="#e2-2">5.2 bash脚本也能...？</a></li> 
+					<li><a href="#e2-3">5.3 短url对我有什...？</a></li> 
+					<li><a href="#e2-4">5.4 哪个团队在维...？</a></li> 
+					<li><a href="#e2-5">5.4 和GoogleChart...？</a></li> 					
+				</ul>
+			</li>
+		</ul> 
+	</div> 
+ 
+	<div class="lay_cont"> 
+		<div class="tit"><h3><a href="#" name="a">B.入门指引</a></h3></div> 
+		<div class="txt3"> 
+			<div class="uam"> 
+				<div class="t"><strong><a href="#" name="b2-1">2.1 Hello world!</a></strong></div> 
+				<div class="m"> 
+					<p>
+					<strong style="line-height:32px;">最简单的例子：</strong><br/>
+					Tencent Chart API 使您可以通过url动态生成图表。要查看 Tencent Chart API 的运行情况，请打开浏览器窗口，并将以下网址复制到地址栏中：<br>
+					http://chart.oa.com/chart.php?cht=p3&chd=t:60,40&chs=250x150&chl=Hello|World
+					<br><br>
+					<strong style="line-height:32px;">在页面中嵌入图片：</strong><br/>
+					在页面中嵌入图片的最常见场景就是为业务设计DashBoard，我们需要大量的趋势图、仪表盘来完成数据可视化。以PHP开发为例，在web服务器根目录（DOCUMENT_ROOT）下建立一个文件名为hello.php，然后完成如下内容：
+					<pre class="brush: css;">
+&lt;?php   
+
+// file encoding: gbk  
+function getPie3dUrl() 
+{     
+	$url = &quot;http://chart.oa.com/chart.php&quot;         
+		. &quot;?cht=p3&amp;chs=400x200&quot;         
+		. &quot;&amp;chd=t:20,80,10,23&quot;         
+		. &quot;&amp;chl=May|Jun|Jul|Aug|Sep|Oct&quot;         
+		. &quot;&amp;chtt=&quot; . urlencode(mb_convert_encoding('主标题|副标题', 'utf8', 'gbk'));     
+	return $url;
+}  
+
+$img = getPie3dUrl();  
+echo &quot;Hello world! This is just a test for call tencent chart service.&lt;br&gt;&quot;;
+echo &quot;&lt;img src=\&quot;$img\&quot;/&gt;&quot;; 
+	
+?&gt; 
+					</pre>
+					</p><p>
+					在浏览器的地址栏里输入web服务器的URL访问这个文件，在结尾加上"/hello.php"。如果本地开发，那么这个URL一般是http://localhost/hello.php或者http://127.0.0.1/hello.php，当然这取决于web服务器的设置。如果所以的设置都正确，那么这个文件将被PHP解析，浏览器中将会看到tencent chart tools服务器吐回的3D饼图，如下图所示：<br>
+					<img src="http://chart.oa.com/chart.php?cht=p3&chs=400x200&chd=t:20,80,10,23&chl=May|Jun|Jul|Aug|Sep|Oct&chtt=%E4%B8%BB%E6%A0%87%E9%A2%98%7C%E5%89%AF%E6%A0%87%E9%A2%98"/>。
+					</p> 
+					<p>对经常和bash脚本打交道的工程师来说，这个步骤是类似的，只要构造好符合Tencent Chart Tools语法规范的url，即可享受利用网址画图的乐趣，上面的PHP例子用bash脚本来写，就如下面的脚本，运行后将得到一段html代码，将运行结果保存为html页面后，用浏览器打开就可以看到图文并茂的页面：
+					<pre class="brush: css;">
+#!/bin/sh
+
+# demo for call tencent chart service in bash script
+
+title=&quot;%E4%B8%BB%E6%A0%87%E9%A2%98%7C%E5%89%AF%E6%A0%87%E9%A2%98&quot;
+url=&quot;http://chart.oa.com/chart.php?cht=p3&amp;chs=400x200&amp;chd=t:20,80,10,23&amp;chl=May|Jun|Jul|Aug|Sep|Oct&amp;chtt=$title&quot;
+
+echo &quot;Hello world! This is just a test for call tencent chart service.&lt;br&gt;&quot;;
+echo &quot;&lt;img src=\&quot;${url}\&quot;/&gt; &quot;
+					</pre>
+					</p>
+					<p><strong style="line-height:32px;">在邮件中嵌入图片：</strong><br/>
+					对于在邮件中嵌入图片的场合，我们知道，mime中的html格式部分，本质就是一个html片段，换言之，我们发送一封图文并茂的文件，通用的做法是先构造一个html页面，然后调用支持smtp协议的工具，把这个html文件发送出去，在收件人看来，他打开邮件看到的内容，就是我们构造的html页面（要进一步了解如何在linux终端发送邮件，不管你是用bash，还是用php，还是希望使用可执行工具，并且你不希望别人跟你拿着RFC文档对你复述一遍，别犹豫，找我就对了）。
+					</p>
+				</div> 
+				<div class="t"><strong><a href="#" name="b2-2">2.2 更高级的封装</a></strong></div> 
+				<div class="m"> 
+					<p>通常在我们的数据都是从mysql（或其他DB）读取的，描点比较多，尽管用网址画图很方便，但是构造url的过程还是很费劲。于是我们需要根据自己的使用习惯，对tencent chart tools再进行一些包装，能半自动构造url，这样就更方便了。<br>
+					一般的，从db中读取的数据可以放到一个array中，我们封装一个类，完成array到url的自动转换。抛个样例出来：
+<!-- php code begin -->					
+					<pre class="brush: css;">
+&lt;?php
+
+/**
+ * php日报组件库-调用TencentChart画图服务的函数集
+ *
+ * @package    Tencent_DailyMail
+ * @copyright  Copyright (c) 1998-2011 Tencent Inc. (http://www.tencent.com)
+ * @author     jamesqin
+ * @version    1.0
+ */
+
+/**
+ * php日报组件库-调用TencentChart画图服务的函数集
+ *
+ * @package    Tencent_DailyMail
+ * @copyright  Copyright (c) 1998-2011 Tencent Inc. (http://www.tencent.com)
+ * @author     jamesqin
+ * @version    1.0
+ */
+class Tencent_DailyMail_ChartUtil
+{
+	/**
+	 * 构造折线图的tencentchart的url
+	 * @param array $charConfig 图片配置
+	 * @param array $arrData 表格数组，包含了图片中要描绘的点
+	 * @param array $arrColName 要展示的曲线对应到表格数组中的哪些列
+	 * @param bool $isCutUrl 是否截断url，即只取表格数组中近10天的数据（因url过长将导致IE/Outlook等软件阶段url，引起图片不能正常显示，因此该函数直接取近10天数据，避免生成的url过长）
+	 * @return string 生成的TencentChart url
+	 */
+	public static function buildLcImgUrl($charConfig, $arrData, $arrColName, $isCutUrl = true)
+	{   
+		// check
+		if (empty($charConfig['chs'])) {
+			$charConfig['chs'] = '350x200';
+		}
+
+		if (empty($arrColName)) {
+			return;
+		}
+
+		// 为了防止url被IE截断导致图形显示失败，可以选择only show the last 10 days
+		$tmpDate = array_keys($arrData);
+		if ($isCutUrl) {
+			$endDate = max($tmpDate);
+			$beginDate = date('Y-m-d', strtotime($endDate) - 9*86400);
+			foreach ($tmpDate as $d) {
+				if ($d &gt;= $beginDate &amp;&amp; $d &lt;= $endDate) {
+					$arrDate[] = $d;
+				} else {
+					unset($arrData[$d]);
+				}
+			}
+		} else {
+			foreach ($tmpDate as $d) {
+				$arrDate[] = $d;
+			}
+		}
+
+		foreach ($arrDate as $key =&gt; $val) { 
+			//$val = substr($val, -5); 
+			//$val = str_replace('-', '', $val);
+			$val = date('md', strtotime($val));
+			$arrDate[$key] = urlencode($val);
+		}
+
+		// data
+		foreach ($arrData as $d =&gt; $row) {
+			foreach ($arrColName as $legend =&gt; $colName) {
+				$arrChdl[] = urlencode(mb_convert_encoding($legend, 'utf8', 'gbk'));
+				$arrChd[$colName][] = isset($row[$colName]) ? $row[$colName] : null;
+			}
+		}
+
+		foreach ($arrChd as $row) {
+			$tmp[] =implode(',', $row);
+		}
+
+		$strChd = implode('|', $tmp);
+
+		// build
+		$imgurl = &quot;http://chart.oa.com/chart.php&quot;
+			. &quot;?cht=lc&amp;chs=&quot; . $charConfig['chs']
+			. &quot;&amp;chtt=&quot; . urlencode(mb_convert_encoding($charConfig['title'], 'utf8', 'gbk'))
+			. &quot;&amp;chd=t:&quot; . $strChd
+			. &quot;&amp;chco=0000ff,ff0000&quot;
+			. &quot;&amp;chdl=&quot; . implode('|', $arrChdl)
+			. &quot;&amp;chxl=0:|&quot; . implode('|', $arrDate);
+
+		return $imgurl;
+	}
+
+
+	/**
+	 * 构造折线图的tencentchart的url
+	 * @param array $charConfig 图片配置
+	 * @param array $arrData 表格数组，包含了图片中要描绘的点
+	 * @param array $arrColName 要展示的曲线对应到表格数组中的哪些列
+	 * @param bool $isCutUrl 是否截断url，即只取表格数组中近10天的数据（因url过长将导致IE/Outlook等软件阶段url，引起图片不能正常显示，因此该函数直接取近10天数据，避免生成的url过长）
+	 * @return string 生成的TencentChart url
+	 */
+	public static function buildBvgImgUrl($charConfig, $arrData, $arrColName, $isCutUrl = true)
+	{   
+		// check
+		if (empty($charConfig['chs'])) {
+			$charConfig['chs'] = '350x200';
+		}
+
+		if (empty($arrColName)) {
+			return;
+		}
+
+		// 为了防止url被IE截断导致图形显示失败，可以选择only show the last 10 days
+		$tmpDate = array_keys($arrData);
+		if ($isCutUrl) {
+			$endDate = max($tmpDate);
+			$beginDate = date('Y-m-d', strtotime($endDate) - 9*86400);
+			foreach ($tmpDate as $d) {
+				if ($d &gt;= $beginDate &amp;&amp; $d &lt;= $endDate) {
+					$arrDate[] = $d;
+				} else {
+					unset($arrData[$d]);
+				}
+			}
+		} else {
+			foreach ($tmpDate as $d) {
+				$arrDate[] = $d;
+			}
+		}
+
+		foreach ($arrDate as $key =&gt; $val) { 
+			//$val = substr($val, -5); 
+			//$val = str_replace('-', '', $val);
+			$val = date('md', strtotime($val));
+			$arrDate[$key] = urlencode($val);
+		}
+
+		// data
+		foreach ($arrData as $d =&gt; $row) {
+			foreach ($arrColName as $legend =&gt; $colName) {
+				$arrChdl[] = urlencode(mb_convert_encoding($legend, 'utf8', 'gbk'));
+				$arrChd[$colName][] = isset($row[$colName]) ? $row[$colName] : null;
+			}
+		}
+
+		foreach ($arrChd as $row) {
+			$tmp[] =implode(',', $row);
+		}
+
+		$strChd = implode('|', $tmp);
+
+		// build
+		$imgurl = &quot;http://chart.oa.com/chart.php&quot;
+			. &quot;?cht=bvg&amp;chs=&quot; . $charConfig['chs']
+			. &quot;&amp;chtt=&quot; . urlencode(mb_convert_encoding($charConfig['title'], 'utf8', 'gbk'))
+			. &quot;&amp;chd=t:&quot; . $strChd
+			. &quot;&amp;chco=0000ff,ff0000,AA8823&quot;
+			. &quot;&amp;chdl=&quot; . implode('|', $arrChdl)
+			. &quot;&amp;chxl=0:|&quot; . implode('|', $arrDate);
+
+		return $imgurl;
+	}
+
+
+	/**
+	 * 构造饼图的tencentchart的url
+	 * @param array $charConfig 图片配置
+	 * @param array $arrData 表格数组，包含了图片中要描绘的点
+	 * @param array $arrColName 要展示的曲线对应到表格数组中的哪些列
+	 * @param bool $isCutUrl 是否截断url，即只取表格数组中近10天的数据（因url过长将导致IE/Outlook等软件阶段url，引起图片不能正常显示，因此该函数直接取近10天数据，避免生成的url过长）
+	 * @return string 生成的TencentChart url
+	 */
+	public static function buildPieImgUrl($charConfig, $arrData, $arrColName, $isCutUrl = true)
+	{   
+		// check
+		if (empty($charConfig['chs'])) {
+			$charConfig['chs'] = '350x200';
+		}
+
+		if (empty($arrColName)) {
+			return;
+		}
+
+		// 为了防止url被IE截断导致图形显示失败，可以选择only show the last 10 days
+		$tmpDate = array_keys($arrData);
+		if ($isCutUrl) {
+			$endDate = max($tmpDate);
+			$beginDate = date('Y-m-d', strtotime($endDate) - 9*86400);
+			foreach ($tmpDate as $d) {
+				if ($d &gt;= $beginDate &amp;&amp; $d &lt;= $endDate) {
+					$arrDate[] = $d;
+				} else {
+					unset($arrData[$d]);
+				}
+			}
+		} else {
+			foreach ($tmpDate as $d) {
+				$arrDate[] = $d;
+			}
+		}
+
+		foreach ($arrDate as $key =&gt; $val) { 
+			$val = date('md', strtotime($val));
+			$arrDate[$key] = urlencode($val);
+		}
+
+		// data
+		foreach ($arrColName as $legend =&gt; $colName) {
+			$arrChl[$colName] = urlencode(mb_convert_encoding($legend, 'utf8', 'gbk'));
+			$arrChd[$colName] = Tencent_DailyMail_ArrayUtil::sumInArray($arrData, $colName);
+		}
+
+		// build
+		$imgurl = &quot;http://chart.oa.com/chart.php&quot;
+			. &quot;?cht=p&amp;chs=&quot; . $charConfig['chs']
+			. &quot;&amp;chtt=&quot; . urlencode(mb_convert_encoding($charConfig['title'], 'utf8', 'gbk'))
+			. &quot;&amp;chd=t:&quot; . implode(',', $arrChd)
+			. &quot;&amp;chco=0000ff,ff0000,AA8823&quot;
+			. &quot;&amp;chl=&quot; . implode('|', $arrChl);
+
+		return $imgurl;
+	}
+
+
+	/**
+	 * 根据tencentchart的url，转化为post请求，拿到图片内容
+	 * 因为是post请求，因此不会存在url过长的情况，对于tencent chart调用生成的url超过1k的场合，可以使用该方法
+	 *
+	 * @param string $url tencent chart url
+	 * @return string 图片内容，直接echo,客户端看到的就是一副图片了
+	 */
+	public function getImg($url)
+	{
+		$arrUrl = parse_url($url);
+
+		$uServer = &quot;{$arrUrl['scheme']}://{$arrUrl['host']}{$arrUrl['path']}&quot;;
+		$post_data = $arrUrl['query'];
+
+		@$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, &quot;$uServer&quot;);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_HEADER, 0);
+		curl_setopt($ch, CURLOPT_POST, 1);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);
+		$result = @curl_exec($ch);
+		$errnum = curl_errno($ch);
+
+		if($errnum != &quot;0&quot;) { 
+			echo &quot;Remote Site Status: DOWN. Error is &quot;.curl_error($ch) . &quot;&lt;/br&gt;\n&quot;;
+			echo &quot;url = $uServer&quot;; 
+		} else {
+			echo $result;
+		}
+
+		@curl_close($ch);
+	}
+}
+
+					</pre>
+<!-- php code end -->					
+					</p> 
+				</div> 	
+				<div class="t"><strong><a href="#" name="b2-3">2.3 使用短网址</a></strong></div> 
+				<div class="m"> 
+					<p>当我们画图中需要用到的点信息非常大，导致构造的url长度，已经超出了浏览器对http get请求长度的限制时（IE是8k），我们的动态画图请求就无法完整传到server端，这时候就需要改用post方式来传递数据。Tencent Chart Tools的服务器允许在一次post请求传递8M的数据。<br><br>
+					对于一般的动态脚本语言，比如php，能很方便发起post请求，我们在自己的web服务器增加一个中转即可，浏览器页面嵌入的图片，url可以很短，直接指向proxy服务器，我们在proxy服务器把完成的画图所需数据post到tencent chart service的服务器，把图片拿回来，proxy再把图片还给浏览器。<br><br>
+					看起来方法很不错，因为邮件中的静态html无法发起post请求，所以需要把图片请求通过一个短网址传到proxy，由proxy代为获取图片，这就是我们的短网址服务要提供的功能。<br><br>
+					使用短网址的好处是显而易见的，url更短了，避免了8k的长度限制，另外还达到了信息隐藏的目的，还有，我们可以统计图片的显示次数。如果要对图片的访问增加权限控制，我们在这个环节在做无疑是最省事的。<br><br>
+					短网址服务的地址是url.oa.com，提供两个接口，一个用于登记，一个用于提取，具体用法请访问<a href="http://url.oa.com">url.oa.com</a>．
+					</div>
+
+					</p> 
+				</div> 	
+			</div>
+		</div> 
+	</div> 
+	<!--lay_cont end-->
+</div> 
+<!--lay_main end--> 
+
+<div class="lay_foot"> 
+	<p class="copyright_en">Copyright &copy; 1998 - 2012 Tencent. All Rights Reserved.</p> 
+	<p class="copyright">腾讯公司 版权所有</p> 
+</div> 
+ 
+<div id="returnTop"></div> 
+<!--scripts--> 
+<script type="text/javascript" src="js/shCore.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/shBrushCss.js" charset="utf-8"></script>
+</body> 
+</html> 

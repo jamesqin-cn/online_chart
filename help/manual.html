@@ -1,0 +1,291 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"> 
+<html lang="zh-cn"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta http-equiv="Content-Language" content="zh-cn" /> 
+<meta name="robots" content="all" /> 
+<meta name="Keywords" content="腾讯,搜搜,Tencent Chart Tools" /> 
+<meta name="Description" content="Tencent Chart Tools" /> 
+<meta name="author" content="Tencent" /> 
+<meta name="copyright" content="Tencent" /> 
+<title>Tencent Chart Tools</title> 
+<link rel="sgirtcut icon" href="/images/soso.ico" /> 
+<link href="css/global.css" rel="stylesheet" type="text/css" media="screen" /> 
+<link href="css/second.css" rel="stylesheet" type="text/css" media="screen" /> 
+<link href="css/shCore.css" rel="stylesheet" type="text/css" media="screen" /> 
+<link href="css/shCoreDefault.css" rel="stylesheet" type="text/css" media="screen" /> 
+<script type="text/javascript" src="js/jquery/jquery.1.4.2.min.js" charset="utf-8"></script> 
+<script type="text/javascript" src="js/index.js" charset="utf-8"></script> 
+</head> 
+ 
+<body> 
+<div class="lay_head_wrap" id="divHead"> 
+	<div class="lay_head"> 
+		<h1 class="logo"><strong class="none">Tencent Chart Tools<sup>beta</sup></strong></h1> 
+		<div class="link"> 
+			<span id="ua"></span> 
+		</div> 
+		<div class="nav" id="navDiv"></div> 
+	</div> 
+</div><!--lay_head_wrap--> 
+ 
+<div class="lay_main page_modApp"> 
+	<div class="lay_aside"> 
+		<ul class="menu n_menu" id="ulMenu"> 
+			<li><a href="index.html">A.服务概览</a>
+			
+				<ul>
+					<li><a href="#a2-1">1.1 Hello charts!</a></li> 
+					<li><a href="#a2-2">1.2 核心优势</a></li> 
+					<li><a href="#a2-3">1.3 整体架构</a></li> 
+					<li><a href="#a2-4">1.4 线路特性</a></li> 
+					<li><a href="#a2-5">1.5 服务介绍</a></li> 
+				</ul>
+			</li>
+			<li><a href="tutorial.html">B.入门指引</a>
+				<ul>
+					<li><a href="#b2-1">2.1 Hello world!</a></li> 
+					<li><a href="#b2-2">2.2 更高级的封装</a></li> 
+					<li><a href="#b2-3">2.3 使用短网址</a></li> 
+				</ul>
+			</li>
+			<li class="curli"><a href="manual.html">C.开发手册</a>
+				<ul class="open">
+					<li><a href="#c2-1">3.1 Bar Charts</a></li> 
+					<li><a href="#c2-2">3.2 Line Charts</a></li> 
+					<li><a href="#c2-3">3.3 Pie Charts</a></li> 
+					<li><a href="#c2-4">3.4 Scatter Charts</a></li> 
+				</ul>
+			</li>
+			<li><a href="cases.html">D.经典案例</a>
+				<ul>
+					<li><a href="#d2-1">4.1 搜索平台部：网页搜索QV统计日报</a></li> 
+					<li><a href="#d2-2">4.2 搜索应用部：垂直搜索产品周报</a></li> 
+					<li><a href="#d2-3">4.3 搜索拓展部：校园logo创意大赛日报</a></li> 
+					<li><a href="#d2-4">4.4 搜索拓展部：感恩父母活动日报</a></li> 
+					<li><a href="#d2-5">4.5 搜索拓展部：点亮搜搜新标日报</a></li> 
+					<li><a href="#d2-6">4.6 搜索拓展部：年度贺岁剧小兔快跑日报</a></li> 
+					<li><a href="#d2-7">4.7 研发运营部：客户端(tbh/toolbar)运营日报</a></li> 		
+				</ul>
+			</li>			
+			<li><a href="faq.html">E.常见问题</a>
+				<ul>
+					<li><a href="#e2-1">5.1 如何获取Tence...？</a></li> 
+					<li><a href="#e2-2">5.2 bash脚本也能...？</a></li> 
+					<li><a href="#e2-3">5.3 短url对我有什...？</a></li> 
+					<li><a href="#e2-4">5.4 哪个团队在维...？</a></li> 
+					<li><a href="#e2-5">5.4 和GoogleChart...？</a></li> 
+				</ul>
+			</li>
+		</ul> 
+	</div> 
+ 
+	<div class="lay_cont"> 
+		<div class="tit"><h3><a href="#" name="c">C.开发手册</a></h3></div> 
+		<div class="txt3"> 
+			<div class="uam"> 
+				<div class="t"><strong><a href="#" name="c2-1">3.1 Bar Charts</a></strong></div> 
+				<div class="m"> 
+					<p>
+						<table class="manual_table">
+						  <tr style="border: 1px solid #999; border-collapse: collapse; border-spacing: 0;">
+							<td bgcolor="#EFEFEF"><b>URL</b></td>
+							<td bgcolor="#EFEFEF" width="100%"><b>Components</b></td>
+						  </tr>
+						  <tr style="border: 1px solid #999; border-collapse: collapse; border-spacing: 0;">
+							<td bgcolor="#FFFFFF" style="vertical-align:top;"><img src="http://chart.oa.com/chart.php?cht=bvg&chs=300x200&chd=t:200,50,60,80,40|50,60,100,40,20&chco=4d89f9,c6d9fd&chdl=sz|%E8%A5%BF%E5%AE%89&chbh=20&chxl=0:|05-04|05-05|05-06|05-07|05-08&chtt=%E4%B8%AD%E6%96%87%E6%A0%87%E9%A2%98"><br>
+							<p>http://chart.oa.com/chart.php?<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;cht=bvg&amp;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;chs=300x200&amp;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;chd=t:200,50,60,80,40|50,60,100,40,20&amp;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;chco=4d89f9,c6d9fd&amp;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;chdl=sz|%E8%A5%BF%E5%AE%89&amp;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;chxl=0:|05-04|05-05|05-06|05-07|05-08&amp;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;chtt=%E4%B8%AD%E6%96%87%E6%A0%87%E9%A2%98</p></td>
+							<td bgcolor="#FFFFFF">
+							<strong style="line-height:32px;">http://chart.oa.com/chart.php?</strong><br/>
+							<div style="margin-left:2em;"><p>这是所有chart请求的基本url前缀。</p></div>
+							<strong style="line-height:32px;">cht=bvg</strong><br/>
+							<div style="margin-left:2em;"><p>The chart type, 直方图，多个系列横向平行排列（对比与bvs）</p></div>
+							<strong style="line-height:32px;">chs=300x200</strong><br/>
+							<div style="margin-left:2em;"><p>The chart size, width=300, height=200</p></div>
+							<strong style="line-height:32px;">chd=t:200,50,60,80,40|50,60,100,40,20</strong><br/>
+							<div style="margin-left:2em;"><p>The chart data. t代表是简单的文本格式(目前也只支持t)，|符号分隔不同系列的数据</p></div>
+							<strong style="line-height:32px;">chco=4d89f9,c6d9fd</strong><br/>
+							<div style="margin-left:2em;"><p>The chart color. 16进制表示的颜色，留空或不足则系统自动分配。</p></div>
+							<strong style="line-height:32px;">chdl=sz|%E8%A5%BF%E5%AE%89</strong><br/>
+							<div style="margin-left:2em;"><p>The chart data legend.如有中文需要先转utf8再urlencode</p></div>
+							<strong style="line-height:32px;">chxl=0:|05-04|05-05|05-06|05-07|05-08</strong><br/>
+							<div style="margin-left:2em;"><p>The chart axis label.“0:”代表这是第一组数据的x轴描述，一般多组数据的x轴都是一样的，这里只处理0:的情况。如有中文需要先转utf8再urlencode</p></div>
+							<strong style="line-height:32px;">chtt=..</strong><br/>
+							<div style="margin-left:2em;"><p>The chart title. 如有中文需要先转utf8再urlencode</p></div>
+							<strong style="line-height:32px;">&amp;</strong><br/>
+							<div style="margin-left:2em;"><p>URL中各参数的分隔符。</p></div>
+							</td>
+						  </tr>				  
+						</table>	
+					</p> 
+				</div> 
+				<div class="t"><strong><a href="#" name="c2-2">3.2 Line Charts</a></strong></div> 
+				<div class="m"> 
+					<p>
+						<table class="manual_table">
+						  <tr style="border: 1px solid #999; border-collapse: collapse; border-spacing: 0;">
+							<td bgcolor="#EFEFEF"><b>URL</b></td>
+							<td bgcolor="#EFEFEF" width="100%"><b>Components</b></td>
+						  </tr>
+						  <tr style="border: 1px solid #999; border-collapse: collapse; border-spacing: 0;">
+							<td bgcolor="#FFFFFF" style="vertical-align:top;"><img src="http://chart.oa.com/chart.php?cht=lc&chs=300x200&chd=t:200,50,60,80,40|50,60,100,40,20&chco=0000ff,ff0000&chdl=sz|bj&chxl=0:|05-04|05-05|05-06|05-07|05-08&chtt=%E4%B8%AD%E6%96%87%E6%A0%87%E9%A2%98&chmixer=Tencent&chm=N"><br>
+							<p>http://chart.oa.com/chart.php?<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;cht=lc&amp;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;chs=300x200&amp;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;chd=t:200,50,60,80,40|50,60,100,40,20&amp;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;chco=0000ff,ff0000&amp;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;chdl=sz|bj&amp;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;chxl=0:|05-04|05-05|05-06|05-07|05-08&amp;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;chtt=%E4%B8%AD%E6%96%87%E6%A0%87%E9%A2%98<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;chmixer=Tencent<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;chm=N</p></td>
+							<td bgcolor="#FFFFFF">
+							<strong style="line-height:32px;">http://chart.oa.com/chart.php?</strong><br/>
+							<div style="margin-left:2em;"><p>这是所有chart请求的基本url前缀。</p></div>
+							<strong style="line-height:32px;">cht=lc</strong><br/>
+							<div style="margin-left:2em;"><p>The chart type, 折线图</p></div>
+							<strong style="line-height:32px;">chs=300x200</strong><br/>
+							<div style="margin-left:2em;"><p>The chart size, width=300, height=200</p></div>
+							<strong style="line-height:32px;">chd=t:200,50,60,80,40|50,60,100,40,20</strong><br/>
+							<div style="margin-left:2em;"><p>The chart data. t代表是简单的文本格式(目前也只支持t)，|符号分隔不同系列的数据</p></div>
+							<strong style="line-height:32px;">chco=0000ff,ff0000</strong><br/>
+							<div style="margin-left:2em;"><p>The chart color. 16进制表示的颜色，留空或不足则系统自动分配。</p></div>
+							<strong style="line-height:32px;">chdl=sz|bj</strong><br/>
+							<div style="margin-left:2em;"><p>The chart data legend.如有中文需要先转utf8再urlencode</p></div>
+							<strong style="line-height:32px;">chxl=0:|05-04|05-05|05-06|05-07|05-08</strong><br/>
+							<div style="margin-left:2em;"><p>The chart axis label.“0:”代表这是第一组数据的x轴描述，一般多组数据的x轴都是一样的，这里只处理0:的情况。如有中文需要先转utf8再urlencode</p></div>
+							<strong style="line-height:32px;">chtt=..</strong><br/>
+							<div style="margin-left:2em;"><p>The chart title. 如有中文需要先转utf8再urlencode</p></div>
+							<strong style="line-height:32px;">chmixer=..</strong><br/>
+							<div style="margin-left:2em;"><p>The image mixer. 水印，如有中文需要先转utf8再urlencode</p></div>
+							<strong style="line-height:32px;">chm=[N|o|-]</strong><br/>
+							<div style="margin-left:2em;"><p>The chart marker. 折线中的点的marker，N:标注数字 o:标注圆圈 -:不标注, 默认标注圆圈</p></div>
+							<strong style="line-height:32px;">&amp;</strong><br/>
+							<div style="margin-left:2em;"><p>URL中各参数的分隔符。</p></div>
+							</td>
+						  </tr>				  
+						</table>					
+					</p> 
+				</div> 	
+				<div class="t"><strong><a href="#" name="c2-3">3.3 Pie Charts</a></strong></div> 
+				<div class="m"> 
+					<p>
+						<table class="manual_table">
+						  <tr style="border: 1px solid #999; border-collapse: collapse; border-spacing: 0;">
+							<td bgcolor="#EFEFEF"><b>URL</b></td>
+							<td bgcolor="#EFEFEF" width="100%"><b>Components</b></td>
+						  </tr>
+						  <tr style="border: 1px solid #999; border-collapse: collapse; border-spacing: 0;">
+							<td bgcolor="#FFFFFF" style="vertical-align:top;"><img src="http://chart.oa.com/chart.php?cht=p&chs=300x200&chd=t:20,80,10,23&chl=hello|world&chtt=%E4%B8%AD%E6%96%87%E6%A0%87%E9%A2%98"><br>
+							<p>http://chart.oa.com/chart.php?<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;cht=p&amp;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;chs=300x200&amp;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;chd=t:20,80,10,23&amp;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;chl=hello|world&amp;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;chtt=%E4%B8%AD%E6%96%87%E6%A0%87%E9%A2%98</p></td>
+							<td bgcolor="#FFFFFF">
+							<strong style="line-height:32px;">http://chart.oa.com/chart.php?</strong><br/>
+							<div style="margin-left:2em;"><p>这是所有chart请求的基本url前缀。</p></div>
+							<strong style="line-height:32px;">cht=p</strong><br/>
+							<div style="margin-left:2em;"><p>The chart type, 饼图</p></div>
+							<strong style="line-height:32px;">chs=300x200</strong><br/>
+							<div style="margin-left:2em;"><p>The chart size, width=300, height=200</p></div>
+							<strong style="line-height:32px;">chd=t:20,80,10,23</strong><br/>
+							<div style="margin-left:2em;"><p>The chart data. t代表是简单的文本格式</p></div>
+							<strong style="line-height:32px;">chl=hello|world</strong><br/>
+							<div style="margin-left:2em;"><p>The slice labels.</p></div>
+							<strong style="line-height:32px;">chtt=..</strong><br/>
+							<div style="margin-left:2em;"><p>The chart title. 如果title中包含中文，提交前请先转成utf8编码，再进行urlencode</p></div>
+							<strong style="line-height:32px;">&amp;</strong><br/>
+							<div style="margin-left:2em;"><p>URL中各参数的分隔符。</p></div>
+							</td>
+						  </tr>
+						  <tr style="border: 1px solid #999; border-collapse: collapse; border-spacing: 0;">
+							<td bgcolor="#FFFFFF" style="vertical-align:top;"><img src="http://chart.oa.com/chart.php?cht=p3&chs=300x120&chd=t:20,80,10,23&chl=hello|world&chtt=%E4%B8%AD%E6%96%87%E6%A0%87%E9%A2%98"><br>
+							<p>http://chart.oa.com/chart.php?<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;cht=p3&amp;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;chs=300x120&amp;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;chd=t:20,80,10,23&amp;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;chl=hello|world&amp;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;chtt=%E4%B8%AD%E6%96%87%E6%A0%87%E9%A2%98</p></td>
+							<td bgcolor="#FFFFFF">
+							<strong style="line-height:32px;">http://chart.oa.com/chart.php?</strong><br/>
+							<div style="margin-left:2em;"><p>这是所有chart请求的基本url前缀。</p></div>
+							<strong style="line-height:32px;">cht=p3</strong><br/>
+							<div style="margin-left:2em;"><p>The chart type, 3D饼图</p></div>	
+							<strong style="line-height:32px;">chs=300x120</strong><br/>
+							<div style="margin-left:2em;"><p>The chart size, width=300, height=200</p></div>
+							<strong style="line-height:32px;">chd=t:20,80,10,23</strong><br/>
+							<div style="margin-left:2em;"><p>The chart data. t代表是简单的文本格式</p></div>
+							<strong style="line-height:32px;">chl=hello|world</strong><br/>
+							<div style="margin-left:2em;"><p>The slice labels.</p></div>
+							<strong style="line-height:32px;">chtt=..</strong><br/>
+							<div style="margin-left:2em;"><p>The chart title. 如果title中包含中文，提交前请先转成utf8编码，再进行urlencode</p></div>
+							<strong style="line-height:32px;">&amp;</strong><br/>
+							<div style="margin-left:2em;"><p>URL中各参数的分隔符。</p></div>
+							</td>
+						  </tr>						  
+						</table>				
+					</p> 
+				</div> 	
+				<div class="t"><strong><a href="#" name="c2-4">3.4 Scatter Charts</a></strong></div> 
+				<div class="m"> 
+					<p>
+						<table class="manual_table">
+						  <tr style="border: 1px solid #999; border-collapse: collapse; border-spacing: 0;">
+							<td bgcolor="#EFEFEF"><b>URL</b></td>
+							<td bgcolor="#EFEFEF" width="100%"><b>Components</b></td>
+						  </tr>
+						  <tr style="border: 1px solid #999; border-collapse: collapse; border-spacing: 0;">
+							<td bgcolor="#FFFFFF" style="vertical-align:top;"><img src="http://chart.oa.com/chart.php?cht=s&chs=300x200&chd=t:200,50,60,80,40|50,60,100,40,20&chco=ff0000&chtt=%E4%B8%AD%E6%96%87%E6%A0%87%E9%A2%98"><br>
+							<p>http://chart.oa.com/chart.php?<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;cht=s&amp;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;chs=300x200&amp;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;chd=t:200,50,60,80,40|50,60,100,40,20&amp;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;chco=ff0000&amp;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;chtt=%E4%B8%AD%E6%96%87%E6%A0%87%E9%A2%98</p></td>
+							<td bgcolor="#FFFFFF">
+							<strong style="line-height:32px;">http://chart.oa.com/chart.php?</strong><br/>
+							<div style="margin-left:2em;"><p>这是所有chart请求的基本url前缀。</p></div>
+							<strong style="line-height:32px;">cht=s</strong><br/>
+							<div style="margin-left:2em;"><p>The chart type, 散点图</p></div>
+							<strong style="line-height:32px;">chs=300x200</strong><br/>
+							<div style="margin-left:2em;"><p>The chart size, width=300, height=200</p></div>
+							<strong style="line-height:32px;">chd=t:200,50,60,80,40|50,60,100,40,20</strong><br/>
+							<div style="margin-left:2em;"><p>The chart data. t代表是简单的文本格式</p></div>
+							<strong style="line-height:32px;">chco=ff0000</strong><br/>
+							<div style="margin-left:2em;"><p>The chart color. 16进制表示的颜色，留空则系统自动分配。</p></div>
+							<strong style="line-height:32px;">chtt=..</strong><br/>
+							<div style="margin-left:2em;"><p>The chart title. 如果title中包含中文，提交前请先转成utf8编码，再进行urlencode</p></div>
+							<strong style="line-height:32px;">&amp;</strong><br/>
+							<div style="margin-left:2em;"><p>URL中各参数的分隔符。</p></div>
+							</td>
+						  </tr>				  
+						</table>						
+					</p> 
+				</div> 				
+			</div>
+		</div> 
+	</div> 
+	<!--lay_cont end-->
+</div> 
+<!--lay_main end--> 
+
+<div class="lay_foot"> 
+	<p class="copyright_en">Copyright &copy; 1998 - 2012 Tencent. All Rights Reserved.</p> 
+	<p class="copyright">腾讯公司 版权所有</p> 
+</div> 
+ 
+<div id="returnTop"></div> 
+<!--scripts--> 
+<script type="text/javascript" src="js/shCore.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/shBrushCss.js" charset="utf-8"></script>
+</body> 
+</html> 

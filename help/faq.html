@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"> 
+<html lang="zh-cn"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta http-equiv="Content-Language" content="zh-cn" /> 
+<meta name="robots" content="all" /> 
+<meta name="Keywords" content="腾讯,搜搜,Tencent Chart Tools" /> 
+<meta name="Description" content="Tencent Chart Tools" /> 
+<meta name="author" content="Tencent" /> 
+<meta name="copyright" content="Tencent" /> 
+<title>Tencent Chart Tools</title> 
+<link rel="sgirtcut icon" href="/images/soso.ico" /> 
+<link href="css/global.css" rel="stylesheet" type="text/css" media="screen" /> 
+<link href="css/second.css" rel="stylesheet" type="text/css" media="screen" /> 
+<link href="css/shCore.css" rel="stylesheet" type="text/css" media="screen" /> 
+<link href="css/shCoreDefault.css" rel="stylesheet" type="text/css" media="screen" /> 
+<script type="text/javascript" src="js/jquery/jquery.1.4.2.min.js" charset="utf-8"></script> 
+<script type="text/javascript" src="js/index.js" charset="utf-8"></script> 
+</head> 
+ 
+<body> 
+<div class="lay_head_wrap" id="divHead"> 
+	<div class="lay_head"> 
+		<h1 class="logo"><strong class="none">Tencent Chart Tools<sup>beta</sup></strong></h1> 
+		<div class="link"> 
+			<span id="ua"></span> 
+		</div> 
+		<div class="nav" id="navDiv"></div> 
+	</div> 
+</div><!--lay_head_wrap--> 
+ 
+<div class="lay_main page_modApp"> 
+	<div class="lay_aside"> 
+		<ul class="menu n_menu" id="ulMenu"> 
+			<li><a href="index.html">A.服务概览</a>
+				<ul>
+					<li><a href="#a2-1">1.1 Hello charts!</a></li> 
+					<li><a href="#a2-2">1.2 核心优势</a></li> 
+					<li><a href="#a2-3">1.3 整体架构</a></li> 
+					<li><a href="#a2-4">1.4 线路特性</a></li> 
+					<li><a href="#a2-5">1.5 服务介绍</a></li> 
+				</ul>
+			</li>
+			<li><a href="tutorial.html">B.入门指引</a>
+				<ul>
+					<li><a href="#b2-1">2.1 Hello world!</a></li> 
+					<li><a href="#b2-2">2.2 更高级的封装</a></li> 
+					<li><a href="#b2-3">2.3 使用短网址</a></li> 
+				</ul>
+			</li>
+			<li><a href="manual.html">C.开发手册</a>
+				<ul>
+					<li><a href="#b2-1">2.1 Logo应用</a></li> 
+					<li><a href="#b2-2">2.2 模块元素</a></li> 
+					<li><a href="#b2-3">2.3 文字与超链接</a></li> 
+				</ul>
+			</li>
+			<li><a href="cases.html">D.经典案例</a>
+				<ul>
+					<li><a href="#d2-1">4.1 搜索应用部：垂直搜索产品周报</a></li> 
+					<li><a href="#d2-2">4.2 搜索拓展部：客户端(tbh/toolbar)运营日报</a></li> 
+					<li><a href="#d2-3">4.3 搜索平台部：网页搜索QV统计日报</a></li> 
+					<li><a href="#d2-4">4.4 研发运营部：校园logo创意大赛日报</a></li> 
+					<li><a href="#d2-5">4.5 研发运营部：感恩父母活动日报</a></li> 
+					<li><a href="#d2-6">4.6 研发运营部：点亮搜搜新标日报</a></li> 
+					<li><a href="#d2-7">4.7 研发运营部：年度贺岁剧小兔快跑日报</a></li> 
+				</ul>
+			</li>			
+			<li class="curli"><a href="faq.html">E.常见问题</a>
+				<ul class="open">
+					<li><a href="#e2-1">5.1 如何获取Tence...？</a></li> 
+					<li><a href="#e2-2">5.2 bash脚本也能...？</a></li> 
+					<li><a href="#e2-3">5.3 短url对我有什...？</a></li> 
+					<li><a href="#e2-4">5.4 哪个团队在维...？</a></li> 
+					<li><a href="#e2-5">5.4 和GoogleChart...？</a></li> 
+				</ul>
+			</li>
+		</ul> 
+	</div> 
+ 
+	<div class="lay_cont"> 
+		<div class="tit"><h3><a href="#" name="e">E.常见问题</a></h3></div> 
+		<div class="txt3"> 
+			<div class="uam"> 
+				<div class="t"><strong><a href="#" name="e2-1">5.1 如何获取TencentChartTools？</a></strong></div> 
+				<div class="m"> 
+					<p>For every tencenter，你马上就可以拥有它而不需要占有它，chart.oa.com和url.oa.com两个域名随时为你提供服务。</p> 
+				</div> 
+				<div class="t"><strong><a href="#" name="e2-2">5.2 bash脚本也能发图文并茂的邮件吗？</a></strong></div> 
+				<div class="m"> 
+					<p>可以。你需要用bash脚本生成一个html页面，页面中的图片用tencent chart api的语法来构成，然后调用smtp协议发出去。</p> 
+				</div> 	
+				<div class="t"><strong><a href="#" name="e2-3">5.3 短url对我有什么帮助？</a></strong></div> 
+				<div class="m"> 
+					<p>突破浏览器对http get请求的长度限制、信息隐藏、网址看起来更整齐、图片流量统计……</p> 
+				</div> 	
+				<div class="t"><strong><a href="#" name="e2-4">5.4 哪个团队在维护TencentChartTools？</a></strong></div> 
+				<div class="m"> 
+					<p>是一群热血青年组成的团队在维护，搜索业务线-研发运营部-运营中心-运营数据组，致力于打造助力搜索业务腾飞的数据平台和数据产品。</p> 
+				</div> 	
+				<div class="t"><strong><a href="#" name="e2-5">5.5 和GoogleChartApi是什么关系？</a></strong></div> 
+				<div class="m"> 
+					<p>有关系，但是没有发生关系。TencentChartApi极力兼容GoogleChartApi，可以视为GoogleChartApi的本地化版本，在减少大家的移植成本的同时，增加一些有趣、实用的功能。</p> 
+				</div> 	
+			</div>
+		</div> 
+	</div> 
+	<!--lay_cont end-->
+</div> 
+<!--lay_main end--> 
+
+<div class="lay_foot"> 
+	<p class="copyright_en">Copyright &copy; 1998 - 2012 Tencent. All Rights Reserved.</p> 
+	<p class="copyright">腾讯公司 版权所有</p> 
+</div> 
+ 
+<div id="returnTop"></div> 
+<!--scripts--> 
+<script type="text/javascript" src="js/shCore.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/shBrushCss.js" charset="utf-8"></script>
+</body> 
+</html> 
