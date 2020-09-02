@@ -23,11 +23,11 @@ class bvg
 	
 	function __construct()
 	{
-		// ±ØÑ¡²ÎÊý
+		// å¿…é€‰å‚æ•°
 		$this->_chd  = new chd($_REQUEST['chd']);
 		$this->_chs  = new chs($_REQUEST['chs']);
 		
-		// ¿ÉÑ¡²ÎÊý
+		// å¯é€‰å‚æ•°
 		@$this->_chtt = new chtt($_REQUEST['chtt']);
 		@$this->_chl  = new chl($_REQUEST['chl']);
 		@$this->_chco = new chco($_REQUEST['chco']);
@@ -51,7 +51,7 @@ class bvg
 		$arrColor = $this->_chco->getVal();
 		$arrLegends = $this->_chdl->getVal();
 
-		// ¸ù¾Ýtitle¡¢valueÖµ¶Ômargin¶¯Ì¬µ÷Õû
+		// æ ¹æ®titleã€valueå€¼å¯¹marginåŠ¨æ€è°ƒæ•´
 		$maxVal = $this->_chd->getMaxNum();
 		$maxVal = number_format($maxVal);
 		$len = strlen(strval($maxVal));
@@ -64,14 +64,14 @@ class bvg
 
 		$graph->img->SetMargin($leftMargin, $rightMargin, $topMargin, $bottomMargin);
 
-		// legendÎ»ÖÃµ÷Õû
+		// legendä½ç½®è°ƒæ•´
 		$legendRightPosRatio = 5 / $this->_chs->getWidth();
 		$legendTopPosRatio   = 1 - 25 / $this->_chs->getHeight();
 		$graph->legend->SetLayout(LEGEND_HOR);
 		$graph->legend->Pos($legendRightPosRatio, $legendTopPosRatio);
 		$graph->legend->SetFont(FF_SIMSUN,FS_NORMAL);
 
-		// ÖÁÉÙÒªÓÐÒ»¸öÑÕÉ«£¬È±ÑÕÉ«¾ÍÓÃÇ°Ò»¸öÑÕÉ«²¹
+		// è‡³å°‘è¦æœ‰ä¸€ä¸ªé¢œè‰²ï¼Œç¼ºé¢œè‰²å°±ç”¨å‰ä¸€ä¸ªé¢œè‰²è¡¥
 		if (count($arrColor) == 0) {
 			throw new Exception("class chco must return one color at least.");
 			return;
@@ -108,11 +108,11 @@ class bvg
 		$graph->yaxis->title->SetFont(FF_SIMSUN,FS_BOLD);
 		$graph->yaxis->SetLabelFormatCallback('number_format');
 		$graph->xaxis->title->SetFont(FF_SIMSUN,FS_BOLD);
-		$graph->xaxis->SetFont(FF_SIMSUN,FS_NORMAL);
+		$graph->xaxis->SetFont(FF_SIMSUN,FS_NORMAL,9);
 
 		$graph->legend->SetFont(FF_SIMSUN,FS_NORMAL,9);
 		
-		// ºá×ø±êÌ«¶àÊ±£¬×Ô¶¯¿ÕµµÌø¹ý£¬±ÜÃâxÖá¹ýÓÚ¼·Ñ¹
+		// æ¨ªåæ ‡å¤ªå¤šæ—¶ï¼Œè‡ªåŠ¨ç©ºæ¡£è·³è¿‡ï¼Œé¿å…xè½´è¿‡äºŽæŒ¤åŽ‹
 		$chxl = $this->_chxl->getVal();
 		$oneitem_space = ($this->_chs->getWidth() - 50) / count($chxl[0]);
 		$chxl_space = 35 / $oneitem_space;
